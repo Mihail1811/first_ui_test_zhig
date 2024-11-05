@@ -1,4 +1,4 @@
-from pages import BasePage, LoginPage, InventoryPage, ItemPage, CartPage
+from pages import LoginPage, InventoryPage, ItemPage, CartPage
 import time
 
 
@@ -16,7 +16,6 @@ def test_est_1_login(driver):
     item_page.add_to_cart_btn_click()
     time.sleep(2)
     item_page.back_to_products_click()
-    
     time.sleep(2)
     inventory_page.add_jacket_to_cart_btn_click()
     time.sleep(2)
