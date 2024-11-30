@@ -1,0 +1,6 @@
+venv/
+.idea/
+.vscode/
+chromedriver.exe
+readme.md
+req.txt
