@@ -28,6 +28,7 @@ class BasePage:
         return self.driver.current_url
 
 
+
 class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver, timeout=60)
@@ -75,16 +76,6 @@ class InventoryPage(BasePage):
     @allure.step(r'Нажать на иконку "Корзина"')
     def cart_btn_click(self) -> None:
         self.find_element(*self.cart_btn).click()
-
-    @allure.step(r'Проверить, что открыта страница '
-                 r'"https://www.saucedemo.com/inventory.html"')
-    def check_inventory_page_open(self) -> bool:
-        return self.get_current_url() == self.page_url
-
-    @allure.step(r'Проверить, что переход на страницу '
-                 r'https://www.saucedemo.com/inventory.html не произошел"')
-    def check_incorrect_page_open(self) -> bool:
-        return self.get_current_url() != self.page_url
 
 
 class ItemPage(BasePage):
