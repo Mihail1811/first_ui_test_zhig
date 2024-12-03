@@ -14,7 +14,7 @@ def test_est_1_login(driver):
     inventory_page.cart_btn_click()
     cart_page = CartPage(driver)
     assert cart_page.number_of_products() == 2
-
+    
 
 def test_auth(driver):
     auth_page = LoginPage(driver)

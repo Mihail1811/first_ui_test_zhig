@@ -103,3 +103,4 @@ class CartPage(BasePage):
     @allure.step(r'Проверить, что количество товаров в корзине равно двум')
     def number_of_products(self) -> int:
         return len(self.find_elements(*self.item_list))
+    
