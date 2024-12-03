@@ -22,7 +22,7 @@ def test_auth(driver):
     auth_page.input_password('secret_sauce')
     auth_page.login_button_click()
     with allure.step(r'Проверить, что открыта страница '
-                 r'"https://www.saucedemo.com/inventory.html"'):
+                 r'https://www.saucedemo.com/inventory.html'):
         assert InventoryPage(driver).get_current_url() == InventoryPage(driver).page_url, "Нужная страница не открыта"
 
 
@@ -31,6 +31,7 @@ def test_incorrect_auth(driver):
     auth_page.input_login('standard_user')
     auth_page.input_password('123')
     auth_page.login_button_click()
-    with allure.step(r'Проверить, что переход на страницу '
-                 r'https://www.saucedemo.com/inventory.html не произошел"'):
+    with allure.step(r'Проверить, что вместо ожидаемой страницы '
+                     r'https://www.saucedemo.com/inventory.html открыта '
+                     r'страница https://www.saucedemo.com'):
         assert InventoryPage(driver).get_current_url() != InventoryPage(driver).page_url, "Url 2-х страниц совпали"
