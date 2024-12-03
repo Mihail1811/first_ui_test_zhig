@@ -1,5 +1,6 @@
-__pycache__/
+venv/
 .idea/
 .vscode/
-venv/
-.pytest_cache/
+chromedriver.exe
+readme.md
+req.txt
