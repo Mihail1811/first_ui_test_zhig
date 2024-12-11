@@ -12,13 +12,13 @@ class CompletePage(BasePage):
         self.back_home_button = (By.ID, 'back-to-products')
 
     def get_title(self) -> str:
-        return self.find_element(*self.title).text
+        return self.get_text(self.title)
 
     def get_complete_header(self) -> str:
-        return self.find_element(*self.complete_header).text
+        return self.get_text(self.complete_header)
 
     def get_complete_text(self) -> str:
-        return self.find_element(*self.complete_text).text
+        return self.get_text(self.complete_text)
 
     def present_back_home_button(self) -> bool:
-        return self.assert_that_present(*self.back_home_button)
+        return self.assert_that_present(self.back_home_button)

@@ -23,14 +23,14 @@ class CartPage(BasePage):
         return len(self.find_elements(*self.cart_item))
 
     def get_items_quantity(self) -> int:
-        return int(self.find_element(*self.item_quantity).text)
+        return int(self.get_text(self.item_quantity))
 
     def get_items_price(self) -> float:
-        return float(self.find_element(*self.item_price).text[1:])
+        return float(self.get_text(self.item_price)[1:])
 
     def get_items_name(self) -> str:
-        return self.find_element(*self.item_name).text
+        return self.get_text(self.item_name)
 
     @allure.step(r'Нажать кнопку Checkout')
     def click_checkout_button(self) -> None:
-        return self.find_element(*self.checkout_button).click()
+        return self.click_element(self.checkout_button)

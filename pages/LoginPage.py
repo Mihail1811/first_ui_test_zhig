@@ -18,12 +18,12 @@ class LoginPage(BasePage):
 
     @allure.step(r'Ввести логин')
     def input_login(self, login: str) -> None:
-        self.find_element(*self.login).send_keys(login)
+        self.fill_field(self.login, login)
 
     @allure.step(r'Ввести пароль"')
     def input_password(self, password: str) -> None:
-        self.find_element(*self.password).send_keys(password)
+        self.fill_field(self.password, password)
 
     @allure.step(r'Нажать кнопку "LOGIN"')
     def login_button_click(self) -> None:
-        self.find_element(*self.login_btn).click()
+        self.click_element(self.login_btn)

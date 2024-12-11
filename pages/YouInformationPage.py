@@ -27,16 +27,16 @@ class YourInformationPage(BasePage):
 
     @allure.step(r'Ввести имя')
     def input_first_name(self, first_name: str) -> None:
-        self.find_element(*self.first_name).send_keys(first_name)
+        self.fill_field(self.first_name, first_name)
 
     @allure.step(r'Ввести фамилию')
     def input_last_name(self, last_name: str) -> None:
-        self.find_element(*self.last_name).send_keys(last_name)
+        self.fill_field(self.last_name, last_name)
 
     @allure.step(r'Ввести почтовый индекс')
     def input_postal_code(self, postal_code: str) -> None:
-        self.find_element(*self.postal_code).send_keys(postal_code)
+        self.fill_field(self.postal_code, postal_code)
 
     @allure.step(r'Нажать кнопку Continue')
     def click_continue_button(self) -> None:
-        self.find_element(*self.continue_button).click()
+        self.click_element(self.continue_button)

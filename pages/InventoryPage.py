@@ -21,14 +21,14 @@ class InventoryPage(BasePage):
     @allure.step(r'Найти товар(Sauce Labs Bolt T-Shirt) '
                  r'и нажать на кнопку "Add to cart"')
     def click_t_shirt_add_to_cart_button(self) -> None:
-        self.find_element(*self.t_shirt_add_to_cart_button).click()
+        self.click_element(self.t_shirt_add_to_cart_button)
 
     def get_t_shirt_price(self) -> float:
-        return float(self.find_element(*self.t_shirt_price).text[1:])
+        return float(self.get_text(self.t_shirt_price)[1:])
 
     def get_cart_counter(self) -> int:
-        return int(self.find_element(*self.cart_counter).text)
+        return int(self.get_text(self.cart_counter))
 
     @allure.step(r'Нажать на иконку "Корзина"')
     def click_cart_button(self) -> None:
-        self.find_element(*self.cart).click()
+        self.click_element(self.cart)

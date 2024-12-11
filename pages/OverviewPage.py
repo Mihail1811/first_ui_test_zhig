@@ -34,38 +34,38 @@ class OverviewPage(CartPage):
         self.finish_button = (By.ID, 'finish')
 
     def get_payment_info_label(self) -> str:
-        return self.find_element(*self.payment_info_label).text
+        return self.get_text(self.payment_info_label)
 
     def get_payment_info_value(self) -> str:
-        return self.find_element(*self.payment_info_value).text
+        return self.get_text(self.payment_info_value)
 
     def get_shipping_info_label(self) -> str:
-        return self.find_element(*self.shipping_info_label).text
+        return self.get_text(self.shipping_info_label)
 
     def get_shipping_info_value(self) -> str:
-        return self.find_element(*self.shipping_info_value).text
+        return self.get_text(self.shipping_info_value)
 
     def get_total_info_label(self) -> str:
-        return self.find_element(*self.total_info_label).text
+        return self.get_text(self.total_info_label)
 
     def get_subtotal_label(self) -> str:
-        return self.find_element(*self.subtotal_label).text[:11]
+        return self.get_text(self.subtotal_label)[:11]
 
     def get_subtotal_value(self) -> float:
-        return float(self.find_element(*self.subtotal_label).text[13:])
+        return float(self.get_text(self.subtotal_label)[13:])
 
     def get_tax_label(self) -> str:
-        return self.find_element(*self.tax_label).text[:4]
+        return self.get_text(self.tax_label)[:4]
 
     def get_tax_value(self) -> float:
-        return float(self.find_element(*self.tax_label).text[6:])
+        return float(self.get_text(self.tax_label)[6:])
 
     def get_total_label(self) -> str:
-        return self.find_element(*self.total_label).text[:6]
+        return self.get_text(self.total_label)[:6]
 
     def get_total_value(self) -> float:
-        return float(self.find_element(*self.total_label).text[8:])
+        return float(self.get_text(self.total_label)[8:])
 
     @allure.step(r'Нажать кнопку Finish')
     def click_finish_button(self) -> None:
-        return self.find_element(*self.finish_button).click()
+        return self.click_element(self.finish_button)
