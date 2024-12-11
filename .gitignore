@@ -4,3 +4,4 @@ venv/
 chromedriver.exe
 readme.md
 req.txt
+allure-results/
