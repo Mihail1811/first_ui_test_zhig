@@ -21,4 +21,4 @@ class CompletePage(BasePage):
         return self.get_text(self.complete_text)
 
     def present_back_home_button(self) -> bool:
-        return self.assert_that_present(self.back_home_button)
+        return self.check_existence_element(self.back_home_button)

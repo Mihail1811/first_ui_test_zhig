@@ -42,7 +42,7 @@ class BasePage:
         """
         return self.driver.current_url
 
-    def assert_that_present(self, locator: tuple) -> bool:
+    def check_existence_element(self, locator: tuple) -> bool:
         """
         Проверяет, есть ли элемент на странице
         :param locator: Кортеж, определяющий локатор
